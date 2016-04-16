@@ -1,55 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640">
-
-    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
-    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#main_content').headsmart()
-      })
-    </script>
+    <meta charset="UTF-8">
     <title>Awesome Go Patterns by tmrts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
-    <a id="forkme_banner" href="https://github.com/tmrts/go-patterns">View on GitHub</a>
-    <div class="shell">
+    <section class="page-header">
+      <h1 class="project-name">Awesome Go Patterns</h1>
+      <h2 class="project-tagline"> A curated list of Go patterns and idioms</h2>
+      <a href="https://github.com/tmrts/go-patterns" class="btn">View on GitHub</a>
+      <a href="https://github.com/tmrts/go-patterns/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/tmrts/go-patterns/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-      <header>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <h1>Awesome Go Patterns</h1>
-            <h2> A curated list of Go patterns and idioms</h2>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-      </header>
+    <section class="main-content">
+      <h1>
+<a id="go-patterns---" class="anchor" href="#go-patterns---" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Go Patterns <a href="http://travis-ci.org/tmrts/go-patterns"><img src="https://img.shields.io/travis/tmrts/go-patterns.svg?style=flat-square" alt="Travis Widget"></a> <a href="https://github.com/sindresorhus/awesome"><img src="https://img.shields.io/badge/awesome-%E2%9C%93-ff69b4.svg?style=flat-square" alt="Awesome Widget"></a> <a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://img.shields.io/badge/license-Creative%20Commons%204.0-E91E63.svg?style=flat-square" alt="License Widget"></a>
+</h1>
 
-      <section id="downloads">
-        <span class="inner">
-          <a href="https://github.com/tmrts/go-patterns/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/tmrts/go-patterns/tarball/master" class="tgz"><em>download</em> .TGZ</a>
-        </span>
-      </section>
-
-
-      <span class="banner-fix"></span>
-
-
-      <section id="main_content">
-        <h1>
-<a id="go-patterns" class="anchor" href="#go-patterns" aria-hidden="true"><span class="octicon octicon-link"></span></a>Go Patterns</h1>
-
-<p>A curated collection of common patterns &amp; idioms for Go.</p>
+<p>A curated collection of idiomatic design &amp; application patterns for Go language.</p>
 
 <p><strong>Creational Patterns</strong>:</p>
 
@@ -62,32 +36,24 @@
 </thead>
 <tbody>
 <tr>
-<td align="center"><a href="abstract_factory.go">abstract_factory</a></td>
-<td>use a generic function with specific factories</td>
+<td align="center"><a href="abstract_factory.go">Abstract Factory</a></td>
+<td>Provides an interface for creating families of releated objects</td>
 </tr>
 <tr>
-<td align="center"><a href="borg.go">borg</a></td>
-<td>a singleton with shared-state among instances</td>
+<td align="center"><a href="builder/builder.go">Builder</a></td>
+<td>Builds a complex object using simple objects</td>
 </tr>
 <tr>
-<td align="center"><a href="builder.go">builder</a></td>
-<td>instead of using multiple constructors, builder object receives parameters and returns constructed objects</td>
+<td align="center"><a href="factory_method.go">Factory Method</a></td>
+<td>Defers instantiation of an object to a specialized function for creating instances</td>
 </tr>
 <tr>
-<td align="center"><a href="factory_method.go">factory_method</a></td>
-<td>delegate a specialized function/method to create instances</td>
+<td align="center"><a href="object_pool/pool.go">Object Pool</a></td>
+<td>Instantiates and maintains a group of objects instances of the same type</td>
 </tr>
 <tr>
-<td align="center"><a href="lazy_evaluation.go">lazy_evaluation</a></td>
-<td>lazily-evaluated property pattern in Go</td>
-</tr>
-<tr>
-<td align="center"><a href="pool.go">pool</a></td>
-<td>preinstantiate and maintain a group of instances of the same type</td>
-</tr>
-<tr>
-<td align="center"><a href="prototype.go">prototype</a></td>
-<td>use a factory and clones of a prototype for new instances (if instantiation is expensive)</td>
+<td align="center"><a href="singleton/singleton.go">Singleton</a></td>
+<td>Restricts instantiation of a class to one object</td>
 </tr>
 </tbody>
 </table>
@@ -103,44 +69,36 @@
 </thead>
 <tbody>
 <tr>
-<td align="center"><a href="3-tier.go">3-tier</a></td>
-<td>data&lt;-&gt;business logic&lt;-&gt;presentation separation (strict relationships)</td>
+<td align="center"><a href="adapter.go">Adapter</a></td>
+<td>Adapts otherwise incompatible interfaces to work together by adapting one to the other</td>
 </tr>
 <tr>
-<td align="center"><a href="adapter.go">adapter</a></td>
-<td>adapt one interface to another using a white-list</td>
+<td align="center"><a href="bridge.go">Bridge</a></td>
+<td>Decouples an interface from its implementation so that the two can vary independently</td>
 </tr>
 <tr>
-<td align="center"><a href="bridge.go">bridge</a></td>
-<td>a client-provider middleman to soften interface changes</td>
+<td align="center"><a href="composite.go">Composite</a></td>
+<td>Encapsulates and provides access to a number of different objects</td>
 </tr>
 <tr>
-<td align="center"><a href="composite.go">composite</a></td>
-<td>encapsulate and provide access to a number of different objects</td>
+<td align="center"><a href="structural/decorator.md">Decorator</a></td>
+<td>Adds behavior to an object, statically or dynamically</td>
 </tr>
 <tr>
-<td align="center"><a href="decorator.go">decorator</a></td>
-<td>wrap functionality with other functionality in order to affect outputs</td>
+<td align="center"><a href="facade.go">Facade</a></td>
+<td>Uses one class as an API to a number of others</td>
 </tr>
 <tr>
-<td align="center"><a href="facade.go">facade</a></td>
-<td>use one class as an API to a number of others</td>
+<td align="center"><a href="flyweight.go">Flyweight</a></td>
+<td>Reuses existing instances of objects with similar/identical state to minimize resource usage</td>
 </tr>
 <tr>
-<td align="center"><a href="flyweight.go">flyweight</a></td>
-<td>transparently reuse existing instances of objects with similar/identical state</td>
+<td align="center"><a href="mvc.go">Model View Controller</a></td>
+<td>Divides an app into three interconnected parts to separate internal representation from presentation to user</td>
 </tr>
 <tr>
-<td align="center"><a href="front_controller.go">front_controller</a></td>
-<td>single handler requests coming to the application</td>
-</tr>
-<tr>
-<td align="center"><a href="mvc.go">mvc</a></td>
-<td>model&lt;-&gt;view&lt;-&gt;controller (non-strict relationships)</td>
-</tr>
-<tr>
-<td align="center"><a href="proxy.go">proxy</a></td>
-<td>an object funnels operations to something else</td>
+<td align="center"><a href="proxy.go">Proxy</a></td>
+<td>Provides a surrogate for an object to control it's actions</td>
 </tr>
 </tbody>
 </table>
@@ -156,60 +114,77 @@
 </thead>
 <tbody>
 <tr>
-<td align="center"><a href="chain.go">chain</a></td>
-<td>apply a chain of successive handlers to try and process the data</td>
+<td align="center"><a href="chain_of_responsibility.go">Chain of Responsibility</a></td>
+<td>Avoids coupling a sender to receiver by giving more than object a chance to handle the request</td>
 </tr>
 <tr>
-<td align="center"><a href="catalog.go">catalog</a></td>
-<td>general methods will call different specialized methods based on construction parameter</td>
+<td align="center"><a href="command.go">Command</a></td>
+<td>Bundles a command and arguments to call later</td>
 </tr>
 <tr>
-<td align="center"><a href="chaining_method.go">chaining_method</a></td>
-<td>continue callback next object method</td>
+<td align="center"><a href="mediator.go">Mediator</a></td>
+<td>Connects objects and acts as a proxy</td>
 </tr>
 <tr>
-<td align="center"><a href="command.go">command</a></td>
-<td>bundle a command and arguments to call later</td>
+<td align="center"><a href="memento.go">Memento</a></td>
+<td>Generate an opaque token that can be used to go back to a previous state</td>
 </tr>
 <tr>
-<td align="center"><a href="mediator.go">mediator</a></td>
-<td>an object that knows how to connect other objects and act as a proxy</td>
+<td align="center"><a href="observer.go">Observer</a></td>
+<td>Provide a callback for notification of events/changes to data</td>
 </tr>
 <tr>
-<td align="center"><a href="memento.go">memento</a></td>
-<td>generate an opaque token that can be used to go back to a previous state</td>
+<td align="center"><a href="registry.go">Registry</a></td>
+<td>Keep track of all subclasses of a given class</td>
 </tr>
 <tr>
-<td align="center"><a href="observer.go">observer</a></td>
-<td>provide a callback for notification of events/changes to data</td>
+<td align="center"><a href="state.go">State</a></td>
+<td>Encapsulates varying behavior for the same object based on its internal state</td>
 </tr>
 <tr>
-<td align="center"><a href="publish_subscribe.go">publish_subscribe</a></td>
-<td>a source syndicates events/data to 0+ registered listeners</td>
+<td align="center"><a href="behavioral/strategy.md">Strategy</a></td>
+<td>Enables an algorithm's behavior to be selected at runtime</td>
 </tr>
 <tr>
-<td align="center"><a href="registry.go">registry</a></td>
-<td>keep track of all subclasses of a given class</td>
+<td align="center"><a href="template.go">Template</a></td>
+<td>Defines a skeleton class which defers some methods to subclasses</td>
 </tr>
 <tr>
-<td align="center"><a href="specification.go">specification</a></td>
-<td>business rules can be recombined by chaining the business rules together using boolean logic</td>
+<td align="center"><a href="visitor.go">Visitor</a></td>
+<td>Separates an algorithm from an object on which it operates</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Synchronization Patterns</strong>:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Pattern</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="condition_variable.go">Condition Variable</a></td>
+<td>Provides a mechanism for threads to temporarily give up access in order to wait for some condition</td>
 </tr>
 <tr>
-<td align="center"><a href="state.go">state</a></td>
-<td>logic is organized into a discrete number of potential states and the next state that can be transitioned to</td>
+<td align="center"><a href="mutex/mutex.go">Lock/Mutex</a></td>
+<td>Enforces mutual exclusion limit on a resource to gain exclusive access</td>
 </tr>
 <tr>
-<td align="center"><a href="strategy.go">strategy</a></td>
-<td>selectable operations over the same data</td>
+<td align="center"><a href="monitor.go">Monitor</a></td>
+<td>Combination of mutex and condition variable patterns</td>
 </tr>
 <tr>
-<td align="center"><a href="template.go">template</a></td>
-<td>an object imposes a structure but takes pluggable components</td>
+<td align="center"><a href="read_write_lock.go">Read-Write Lock</a></td>
+<td>Allows parallel read access, but only exclusive access on write operations to a resource</td>
 </tr>
 <tr>
-<td align="center"><a href="visitor.go">visitor</a></td>
-<td>invoke a callback for all items of a collection</td>
+<td align="center"><a href="synchronization/semaphore.md">Semaphore</a></td>
+<td>Allows controlling access to a common resource</td>
 </tr>
 </tbody>
 </table>
@@ -225,34 +200,193 @@
 </thead>
 <tbody>
 <tr>
-<td align="center"><a href="semaphore.go">semaphore</a></td>
-<td>data type for controlling access, to a common resource</td>
+<td align="center"><a href="barrier.go">N-Barrier</a></td>
+<td>Prevents a process from proceeding until all N processes reach to the barrier</td>
+</tr>
+<tr>
+<td align="center"><a href="bounded_parallelism/md5.go">Bounded Parallelism</a></td>
+<td>Completes large number of indenpendent tasks with resource limits</td>
+</tr>
+<tr>
+<td align="center"><a href="broadcast.go">Broadcast</a></td>
+<td>Transfers a message to all recipients simultaneously</td>
+</tr>
+<tr>
+<td align="center"><a href="coroutine/coroutine.go">Coroutines</a></td>
+<td>Subroutines that allow suspending and resuming execution at certain locations</td>
+</tr>
+<tr>
+<td align="center"><a href="generator.go">Generators</a></td>
+<td>Yields a sequence of values one at a time</td>
+</tr>
+<tr>
+<td align="center"><a href="reactor.go">Reactor</a></td>
+<td>Demultiplexes service requests delivered concurrently to a service handler and dispatches them syncronously to the associated request handlers</td>
+</tr>
+<tr>
+<td align="center"><a href="parallelism/md5.go">Parallelism</a></td>
+<td>Completes large number of indenpendent tasks</td>
+</tr>
+<tr>
+<td align="center"><a href="producer_consumer.go">Producer Consumer</a></td>
+<td>Separates tasks from task executions</td>
+</tr>
+<tr>
+<td align="center"><a href="scheduler.go">Scheduler</a></td>
+<td>Orchestrates steps to be performed as part of a task</td>
 </tr>
 </tbody>
 </table>
 
+<p><strong>Messaging Patterns</strong>:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Pattern</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="messaging/fan_in.md">Fan-In</a></td>
+<td>Funnels tasks to a work sink (e.g. server)</td>
+</tr>
+<tr>
+<td align="center"><a href="messaging/fan_out.md">Fan-Out</a></td>
+<td>Distributes tasks amongs workers (e.g. producer)</td>
+</tr>
+<tr>
+<td align="center"><a href="futures_promises.go">Futures &amp; Promises</a></td>
+<td>Acts as a place-holder of a result that is initally unknown for synchronization purposes</td>
+</tr>
+<tr>
+<td align="center"><a href="messaging/publish_subscribe.md">Publish/Subscribe</a></td>
+<td>Passes information to a collection of recipients who subscribed to a topic</td>
+</tr>
+<tr>
+<td align="center"><a href="push_pull.go">Push &amp; Pull</a></td>
+<td>Distributes messages to multiple workers, arranged in a pipeline</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Stability Patterns</strong>:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Pattern</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="bulkhead.go">Bulkheads</a></td>
+<td>Enforces a principle of failure containment (i.e. prevents cascading failures)</td>
+</tr>
+<tr>
+<td align="center"><a href="circuitbreaker/circuit_breaker.go">Circuit-Breaker</a></td>
+<td>Stops the flow of the requests when requests are likely to fail</td>
+</tr>
+<tr>
+<td align="center"><a href="deadline.go">Deadline</a></td>
+<td>Allows clients to stop waiting for a response once the probability of response becomes low (e.g. after waiting 10 seconds for a page refresh)</td>
+</tr>
+<tr>
+<td align="center"><a href="fail_fast.go">Fail-Fast</a></td>
+<td>Checks the availability of required resources at the start of a request and fails if the requirements are not satisfied</td>
+</tr>
+<tr>
+<td align="center"><a href="handshaking.go">Handshaking</a></td>
+<td>Asks a component if it can take any more load, if it can't the request is declined</td>
+</tr>
+<tr>
+<td align="center"><a href="steady_state.go">Steady-State</a></td>
+<td>For every service that accumulates a resource, some other service must recycle that resource</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Profiling Patterns</strong>:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Pattern</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="timing.go">Timing Functions</a></td>
+<td>Wraps a function and logs the execution</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Idioms</strong>:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Pattern</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="idiom/functional_options.md">Functional Options</a></td>
+<td>Allows creating clean APIs with sane defaults and idiomatic overrides</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Anti-Patterns</strong>:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Pattern</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="">Cascading Failures</a></td>
+<td>A failure in a system of interconnected parts in which the failure of a part causes a domino effect</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Other Patterns</strong>:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Pattern</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
 <h1>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h1>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h1>
 
 <p><a href="http://creativecommons.org/licenses/by/4.0/"><img src="http://i.creativecommons.org/l/by/4.0/88x31.png" alt="Creative Commons License"></a></p>
 
 <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
-      </section>
 
-      <footer>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <p>this project by <a href="https://github.com/tmrts">tmrts</a> can be found on <a href="https://github.com/tmrts/go-patterns">GitHub</a></p>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
-        <span class="octocat"></span>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/tmrts/go-patterns">Awesome Go Patterns</a> is maintained by <a href="https://github.com/tmrts">tmrts</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
 
-    </div>
+    </section>
 
-    
+  
   </body>
 </html>
